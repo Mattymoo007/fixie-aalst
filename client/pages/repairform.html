@@ -8,19 +8,55 @@
 
     <style>
 
-    /* just some styling for display purposes only */
+    /* -------------------------------------------------------- */
+    /* some styling for display purposes only. To be deleted when adding style.*/
     .step{
         padding: 50px;
-        margin: 50px;
-        background-color: grey;
+        margin: 100px;
+        background-color: lightgrey;
     }
-    /* just some styling for display purposes only */
+    h1{
+        text-align: center;
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        margin: auto;
+        list-style-type: none;
+    }
 
-    /* styling that is important for the jquery purposes */
-    .register{
+    input{
+        display: block;
+    }
+    /* en of just some styling for display purposes only. To be deleted when adding style.*/
+    /* -------------------------------------------------------- */
+
+    /* -------------------------------------------------------- */
+    /* styling that is important for the jquery purposes. Don't make any changes without considering it's functionality*/
+    
+    /* change css of the active login or register-link */
+    .makeChoise a.active{
+        color: #029f5b;
+        font-weight: bold;
+    }
+
+    /* register form default is display none */
+    #register-form{
         display: none;
     }
 
+    /* all steps except number one default is display none */
+    .step{
+        display: none;
+    }
+    .step:first-child{
+        display: block;
+    }
+    .process li.active{
+        color: #029f5b;
+        font-weight: bold;
+    }
 
     </style>
 
@@ -31,30 +67,59 @@
 </head>
 <body>
     <h1>Repair Form</h1>
-    <div class="step one">
-        <h2>log in</h2>
-        <button id="register">new here? Register now!</button>
-        <br>
-        <label for="name">name</label>
-        <input type="text" id="name">
-        <label for="password">password</label>
-        <input type="password" id="password">
-        <button id="login">Login</button>
-        <br>
-        <div class="register">
-            <label for="mailadress">mailadress</label>
-            <input type="text" id="mailadress">
-            <label for="phone">phone</label>
-            <input type="text" id="phone">
-            <button id="confirmRegister">confirm registration</button>
+    <div class="process">
+        <ul>
+            <li class="one active">log in</li>
+            <li class="two">tell us about the issue</li>
+            <li class="three">pick a date</li>
+            <li class="four">check the price and confirm</li>
+        </ul>
+    </div>
+    <div class="steps">
+        <div class="step one">
+            <h2>tell us who you are</h2>
+            <div class="makeChoise">
+                <span>
+                    <a href="#" class="active" id="login-form-link">Login</a>
+                </span>
+                <span>
+                    <a href="#" id="register-form-link">Register</a>
+                </span>
+            </div>
+    
+            <div id="login-form">
+                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                <button id="login">Login</button>
+            </div>
+    
+            <div id="register-form">
+                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                <input type="text" name="phone" id="phone" tabindex="2" class="form-control" placeholder="Phone">
+                <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                <button id="register">Register</button>
+            </div>
         </div>
-
-    </div>
-    <div class="step two">
-
-    </div>
-    <div class="step three">
-
+    
+        <div class="step two">
+            <h2>tell us what the problem is</h2>
+            <button class="back">back</button>
+            <button class="next">next</button>
+        </div>
+    
+        <div class="step three">
+            <h2>pick a date</h2>
+            <button class="back">back</button>
+            <button class="next">next</button>
+        </div>
+    
+        <div class="step four">
+            <h2>see the price and confirm</h2>
+            <button class="back">back</button>
+            <button class="next">confirm</button>
+        </div>
     </div>
 </body>
 </html>
