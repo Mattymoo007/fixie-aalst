@@ -62,6 +62,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="../assets/js/repairform.js"></script>
+    <script src="../assets/js/issuesRadios.js"></script>
 
 
 </head>
@@ -69,14 +70,14 @@
     <h1>Repair Form</h1>
     <div class="process">
         <ul>
-            <li class="one active">log in</li>
-            <li class="two">tell us about the issue</li>
-            <li class="three">pick a date</li>
-            <li class="four">check the price and confirm</li>
+            <li class="login active">log in</li>
+            <li class="issue">tell us about the issue</li>
+            <li class="date">pick a date</li>
+            <li class="summary">check the price and confirm</li>
         </ul>
     </div>
     <div class="steps">
-        <div class="step one">
+        <div class="step login">
             <h2>tell us who you are</h2>
             <div class="makeChoise">
                 <span>
@@ -88,37 +89,38 @@
             </div>
     
             <div id="login-form">
-                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="password" name="password" id="password" placeholder="Password">
                 <button id="login">Login</button>
             </div>
     
             <div id="register-form">
-                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-                <input type="text" name="phone" id="phone" tabindex="2" class="form-control" placeholder="Phone">
-                <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-                <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="text" name="phone" id="phone" placeholder="Phone">
+                <input type="email" name="email" id="email" placeholder="Email Address">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password">
                 <button id="register">Register</button>
             </div>
         </div>
     
-        <div class="step two">
+        <div class="step issue">
             <h2>tell us what the problem is</h2>
+            <input type="text" name="typeBike" id="typeBike" placeholder="typeBike">
             <button class="back">back</button>
             <button class="next">next</button>
         </div>
     
-        <div class="step three">
+        <div class="step date">
             <h2>pick a date</h2>
             <button class="back">back</button>
             <button class="next">next</button>
         </div>
     
-        <div class="step four">
+        <div class="step summary">
             <h2>see the price and confirm</h2>
             <button class="back">back</button>
-            <button class="next">confirm</button>
+            <button class="confirm">confirm</button>
         </div>
     </div>
 </body>
