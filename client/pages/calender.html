@@ -2,10 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset='utf-8' />
+  <meta charset="utf-8" />
   <title>Drag and Drop Event Calendar</title>
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.css' rel='stylesheet' />
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.print.css' media='print' /> 
+
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+  <!-- all the stylesheets fromg the library for the calender -->
+  <link href="../assets/js/imported/fullcalendar-4.3.1/packages/core/main.css" rel="stylesheet" />
+  <link href="../assets/js/imported/fullcalendar-4.3.1/packages/daygrid/main.css" rel="stylesheet" />
+  <link href="../assets/js/imported/fullcalendar-4.3.1/packages/timegrid/main.css" rel="stylesheet" />
+  <link href="../assets/js/imported/fullcalendar-4.3.1/packages/list/main.css" rel="stylesheet">
+
+  <!-- all the scripts fromg the library for the calender -->
+  <script src="../assets/js/imported/fullcalendar-4.3.1/packages/core/main.js"></script>
+  <script src="../assets/js/imported/fullcalendar-4.3.1/packages/daygrid/main.js"></script>
+  <script src="../assets/js/imported/fullcalendar-4.3.1/packages/timegrid/main.js"></script>
+  <script src="../assets/js/imported/fullcalendar-4.3.1/packages/interaction/main.js"></script>
+  <script src="../assets/js/imported/fullcalendar-4.3.1/packages/list/main.js"></script>
+
+  <!-- custom script for the calender -->
+  <script src="../assets/js/calender.js"></script>
+
+
   <style>
     body {
       margin: 40px 10px;
@@ -13,19 +32,71 @@
       font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
       font-size: 14px;
     }
-    #calendar {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-</style>
+    #wrap {
+    width: 1100px;
+    margin: 0 auto;
+  }
+
+  #external-events {
+    float: left;
+    width: 150px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    background: #eee;
+    text-align: left;
+  }
+
+  #external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+  }
+
+  #external-events .fc-event {
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  #external-events p {
+    margin: 1.5em 0;
+    font-size: 11px;
+    color: #666;
+  }
+
+  #external-events p input {
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  #calendar {
+    float: right;
+    width: 900px;
+  }
+  </style>
 </head>
 <body>
+    <div>
 
-   <div id='calendar'></div>
+        <div id="external-events">
+          <h4>Draggable Events</h4>
+          <!-- TODO: this has to come from the information of the time needed for the fix -->
+          <div id="external-events-list">
+            <div class="fc-event">My Fix</div>
+            <div class="fc-event">My Fix</div>
+            <div class="fc-event">My Fix</div>
+          </div>
+    
+          <p>
+            <input type="checkbox" id="drop-remove" />
+            <label for="drop-remove">remove after drop</label>
+          </p>
+        </div>
+    
+        <div id="calendar"></div>
+    
+        <div style="clear:both"></div>
+    
+      </div>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.js'></script>
-  <script src="../assets/js/calender.js"></script>
 </body>
 </html>
