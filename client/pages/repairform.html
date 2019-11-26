@@ -25,11 +25,11 @@
 <body id="Repair-form">
 
 	<!-- Navbar Fixie -->
-	<div data-include="navbar"></div>
+	<!-- <div data-include="navbar"></div> -->
 
 	<!-- Background div -->
-	<div class="page-header header-filter"
-		style="background-image: url('../assets/img/bg3.jpg'); background-size: cover; background-position: top center;">
+	<div
+		style="padding: 80px 0 50px 0; background-image: url('../assets/img/bg3.jpg'); background-size: cover; background-position: top center;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-md-6 ml-auto mr-auto">
@@ -41,21 +41,27 @@
 								<h3 class="card-title">Repair Details</h3>
 
 								<!-- Progress tracker -->
-								<div class="social-line">
-									<a href="#pablo" class="btn btn-just-icon btn-link">
-										<i class="fa fa-facebook-square"></i>
+								<div class="social-line d-flex">
+									<a href="#pablo" class="btn btn-just-icon btn-link active mx-3">
+										<i class="material-icons">description</i>
 									</a>
-									<a href="#pablo" class="btn btn-just-icon btn-link">
-										<i class="fa fa-twitter"></i>
+									<div class="line"></div>
+									<a href="#pablo" class="btn btn-just-icon btn-link mx-3">
+										<i class="material-icons">date_range</i>
 									</a>
-									<a href="#pablo" class="btn btn-just-icon btn-link">
-										<i class="fa fa-google-plus"></i>
+									<div class="line"></div>
+									<a href="#pablo" class="btn btn-just-icon btn-link mx-3">
+										<i class="material-icons">check</i>
 									</a>
 								</div>
 							</div>
 
-							<!-- Form area -->
-							<h4 class="description text-center mt-4">Please complete the form below to submit your repair request</h4>
+							<!-- Description form -->
+							<h4 class="description text-center text-dark mt-5 d-flex justify-content-center"><i
+									class="material-icons mr-3">info</i>Please Login or <a href="index.html" class="text-danger">
+									&nbsp;Register&nbsp; </a>
+								before
+								continuing</h4>
 							<div class="card-body">
 
 								<!-- First row -->
@@ -88,24 +94,55 @@
 
 								<!-- Second row -->
 								<div class="row">
-									<div class="col-lg-12">
-										<!-- -->
-										<div class="input-group">
+
+									<!-- What is the issue? -->
+									<div class="col-lg-6 mt-5">
+										<div class="form-group d-flex">
 											<div class="input-group-prepend">
 												<span class="input-group-text">
-													<i class="material-icons"></i>
+													<i class="material-icons mx-3">
+														build
+													</i>
 												</span>
 											</div>
-											<input type="address" class="form-control" placeholder="Password...">
+											<select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1"
+												value="What is the problem?">
+												<option value="" disabled selected hidden>What is the problem?</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+											</select>
 										</div>
 									</div>
 								</div>
-							</div>
 
-							<!-- Button -->
-							<div class="footer text-center">
-								<a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Get Started</a>
-							</div>
+								<!-- Third row -->
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="form-group d-flex">
+											<div class="input-group-prepend">
+												<span class="input-group-text">
+													<i class="material-icons mx-3">
+														subject
+													</i>
+												</span>
+											</div>
+											<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+												placeholder="Please write a short descrition of the problem..."></textarea>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-lg-12 my-3">
+										<button class="btn btn-danger float-right">
+											Choose a date<i class="material-icons ml-2">arrow_forward</i>
+										</button>
+									</div>
+								</div>
+
+
 						</form>
 					</div>
 				</div>
@@ -156,7 +193,7 @@
 	<!-- JANA's CODE -->
 	<!-- *********** -->
 
-	<h1>Repair Form</h1>
+	<!-- <h1>Repair Form</h1>
 	<div class="process">
 		<ul>
 			<li class="login active">log in</li>
@@ -211,7 +248,7 @@
 			<button class="back">back</button>
 			<button class="confirm">confirm</button>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- //////////////////////////////////////////////////////// -->
 	<!-- Core JS -->

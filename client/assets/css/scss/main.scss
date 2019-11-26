@@ -1,8 +1,35 @@
-.page-header {
-  .container {
-    .row {
-      .brand {
-        color: rgba(255, 255, 255, 0.5);
+// All css for the front page
+#Front-page {
+  .page-header {
+    .container {
+      .row {
+        .brand {
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+}
+
+// CSS for repair form
+#Repair-form {
+  .card-login {
+    .social-line {
+      justify-content: center;
+      align-items: center;
+      a {
+        &.active {
+          background-color: #fff;
+          border-radius: 50%;
+          i {
+            color: #f44336;
+          }
+        }
+      }
+      .line {
+        width: 100px;
+        height: 2px;
+        background-color: white;
       }
     }
   }
