@@ -16,37 +16,17 @@
 	<script src="https://kit.fontawesome.com/173ddc1998.js" crossorigin="anonymous"></script>
 
 	<!-- Material Kit CSS -->
-	<link href="assets/css/imported/material-kit.min.css?v=2.0.6" rel="stylesheet" />
-	<link href="assets/css/main.min.css" rel="stylesheet" />
+	<link href="../assets/css/imported/material-kit.min.css?v=2.0.6" rel="stylesheet" />
+	<link href="../assets/css/main.min.css" rel="stylesheet" />
 </head>
 
-<body>
+<body id="Front-page">
 
 	<!-- Navbar Fixie -->
-	<nav class="navbar navbar-expand-lg mb-0">
-		<div class="container">
-			<div class="navbar-translate">
-				<a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
-					Fixie
-				</a>
-			</div>
-			<!-- Login to my Fixie -->
-			<form class="form-inline ml-auto">
-				<div class="form-group no-border has-danger">
-					<input type="text" class="form-control mr-4" placeholder="Email" />
-				</div>
-				<div class="form-group no-border has-danger">
-					<input type="text" class="form-control mr-4" placeholder="Password" />
-				</div>
-				<button type="submit" class="btn btn-outline-danger btn-round">
-					my fixie
-				</button>
-			</form>
-		</div>
-	</nav>
+	<div data-include="navbar"></div>
 
 	<!-- Landing page -->
-	<div class="page-header header-filter" style="background-image: url('assets/img/bike.jpg')">
+	<div class="page-header header-filter" style="background-image: url('../assets/img/bike.jpg');">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
@@ -54,7 +34,7 @@
 						<h2>Welcome to</h2>
 						<h1 class="title">Modern Bike Repair</h1>
 						<br />
-						<a href="pages/repairform.html" class="btn btn-danger btn-raised btn-lg">
+						<a href="repairform.html" class="btn btn-danger btn-raised btn-lg">
 							<i class="fas fa-wrench mr-2"></i> Fix your bike
 						</a>
 					</div>
@@ -209,13 +189,20 @@
 		</div>
 	</footer>
 
+
+	<!-- //////////////////////////////////////////////////////// -->
 	<!-- Core JS -->
-	<script src="assets/js/imported/core/jquery.min.js" type="text/javascript"></script>
-	<script src="assets/js/imported/core/popper.min.js" type="text/javascript"></script>
-	<script src="assets/js/imported/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+	<script src="../assets/js/imported/core/jquery.min.js" type="text/javascript"></script>
+	<script src="../assets/js/imported/core/popper.min.js" type="text/javascript"></script>
+	<script src="../assets/js/imported/core/bootstrap-material-design.min.js" type="text/javascript"></script>
 
 	<!-- Imported JS -->
-	<script src="assets/js/imported/material-kit.js" type="text/javascript"></script>
+	<script src="../assets/js/imported/material-kit.js" type="text/javascript"></script>
+
+	<!-- Custom JS -->
+	<script src="../assets/js/main.js"></script>
+
+	<!-- //////////////////////////////////////////////////////// -->
 
 </body>
 
