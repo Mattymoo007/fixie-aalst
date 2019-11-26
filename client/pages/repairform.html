@@ -1,71 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Repair Form</title>
-
+  <head>
+    <title>Fixie - Modern bike repair</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--     Fonts and icons     -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+    />
+    <script
+      src="https://kit.fontawesome.com/173ddc1998.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Material Kit CSS -->
+    <link
+      href="assets/css/imported/material-kit.min.css?v=2.0.6"
+      rel="stylesheet"
+    />
+    <link href="assets/css/main.min.css" rel="stylesheet" />
     <style>
-    /* -------------------------------------------------------- */
-    /* some styling for display purposes only. To be deleted when adding style.*/
-    .step{
-        padding: 50px;
-        margin: 100px;
-        background-color: lightgrey;
-    }
-    h1{
-        text-align: center;
-    }
-    ul{
-        display: flex;
-        justify-content: space-between;
-        width: 50%;
-        margin: auto;
-        list-style-type: none;
-    }
+            /* -------------------------------------------------------- */
+            /* some styling for display purposes only. To be deleted when adding style.*/
+            .step{
+                padding: 50px;
+                margin: 100px;
+                background-color: lightgrey;
+            }
+            h1{
+                text-align: center;
+            }
+            ul{
+                display: flex;
+                justify-content: space-between;
+                width: 50%;
+                margin: auto;
+                list-style-type: none;
+            }
+        
+            input{
+                display: block;
+            }
+            /* en of just some styling for display purposes only. To be deleted when adding style.*/
+            /* -------------------------------------------------------- */
+        
+            /* -------------------------------------------------------- */
+            /* styling that is important for the jquery purposes. Don't make any changes without considering it's functionality*/
+            
+            /* change css of the active login or register-link */
+            .makeChoise a.active{
+                color: #029f5b;
+                font-weight: bold;
+            }
+        
+            /* register form default is display none */
+            #register-form{
+                display: none;
+            }
+        
+            /* all steps except number one default is display none */
+            .step{
+                display: none;
+            }
+            .step:first-child{
+                display: block;
+            }
+            .process li.active{
+                color: #029f5b;
+                font-weight: bold;
+            }
+        
+            </style>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+            <!-- custom scripts -->
+            <script src="../assets/js/repairform.js"></script>
+            <script src="../assets/js/selectIssues.js"></script>
+  </head>
 
-    input{
-        display: block;
-    }
-    /* en of just some styling for display purposes only. To be deleted when adding style.*/
-    /* -------------------------------------------------------- */
 
-    /* -------------------------------------------------------- */
-    /* styling that is important for the jquery purposes. Don't make any changes without considering it's functionality*/
-    
-    /* change css of the active login or register-link */
-    .makeChoise a.active{
-        color: #029f5b;
-        font-weight: bold;
-    }
-
-    /* register form default is display none */
-    #register-form{
-        display: none;
-    }
-
-    /* all steps except number one default is display none */
-    .step{
-        display: none;
-    }
-    .step:first-child{
-        display: block;
-    }
-    .process li.active{
-        color: #029f5b;
-        font-weight: bold;
-    }
-
-    </style>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-    <!-- custom scripts -->
-    <script src="../assets/js/repairform.js"></script>
-    <script src="../assets/js/selectIssues.js"></script>
-
-
-</head>
 <body>
     <h1>Repair Form</h1>
     <div class="process">
