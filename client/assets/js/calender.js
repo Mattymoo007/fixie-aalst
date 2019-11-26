@@ -58,27 +58,31 @@ const allTheEvents = [
       itemSelector: '.fc-event',
       eventData: function(eventEl) {
         return {
-          title: eventEl.innerText.trim()
+          title: eventEl.innerText.trim(),
+        //   todo: get the duration-information from the selected tasks
+          duration: '02:00'
         }
       }
     });
 
     var calendarEl = document.getElementById('calendar');
 
+
     var calendar = new FullCalendar.Calendar(calendarEl, {
         plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
         header: {
         right: 'prev,next today', //positions the the prev/next button on the right 
         center: 'title', //sets the title of the month to center
-        left: 'dayGridMonth,timeGridWeek,timeGridDay'
+        left: 'timeGridWeek,timeGridDay'
         // left: 'month,basicWeek,basicDay' //positions the the prev/next button on the left 
         // left: 'month' //positions the the prev/next button on the left 
       },
-    //   defaultView: 'timeGridWeek',
+      defaultView: 'timeGridWeek',
+      slotDuration: '00:30', // 2 hours
       // defaultDate: '2018-02-16',
       navLinks: true, // click on day/week names to navigate views
-      editable: true,
-      eventLimit: true, // add "more" link when there are too many events in a day
+    //   editable: false,
+    //   eventLimit: true, // add "more" link when there are too many events in a day
       events: allTheEvents,
       eventOverlap: false, // to avoid overlapping
       businessHours: [
@@ -96,11 +100,16 @@ const allTheEvents = [
       nowIndicator: true,
       
       // the drop-function:  
-      editable: true,
+    //   editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
       drop: function(arg) {
+          confirm("you are going to add this appointment");
+          if (r == true) {
+            arg.draggedEl.parentNode.removeChild(arg.draggedEl);
+          };
         // remove the element from the "Draggable Events" list
-        arg.draggedEl.parentNode.removeChild(arg.draggedEl);
+
+        console.log("is dropped");
       }
     });
 

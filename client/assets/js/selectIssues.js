@@ -3,13 +3,13 @@ $( document ).ready(function() {
     const issues = [
         {"description": "flat tyre",
         "class": 'tyre',
-        "time": 60},
+        "time": 30},
         {"description": "breaks",
         "class": "breaks",
         "time": 60},
         {"description": "fix my whole bike",
         "class": "whole",
-        "time": 60}
+        "time": 180}
     ]
     
     // show the issues as radiobuttons
