@@ -15,7 +15,7 @@ $( document ).ready(function() {
     // show the issues as radiobuttons
     let radios = '<div>';
     issues.forEach(issue => {
-        radios += `<label for="${issue['class']}"><input type="radio" name="issue" value="${issue['class']}">${issue['description']}</label>`;
+        radios += `<label for="${issue['class']}"><input type="checkbox" name="issue" value="${issue['class']}">${issue['description']}</label>`;
     });
     radios += '</div>';
     $('#typeBike').after(radios);
