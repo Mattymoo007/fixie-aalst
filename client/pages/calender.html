@@ -5,15 +5,22 @@
   <meta charset="utf-8" />
   <title>Drag and Drop Event Calendar</title>
 
+  <!-- jquery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
-  <!-- all the scripts for the calender and jquery -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.print.css" media="print" /> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.js"></script>
-  <!-- end of scripts for the library -->
+  <!-- all the stylesheets fromg the library for the calender -->
+  <link href="../assets/js/imported/fullcalendar-4.3.1/packages/core/main.css" rel="stylesheet" />
+  <link href="../assets/js/imported/fullcalendar-4.3.1/packages/daygrid/main.css" rel="stylesheet" />
+  <link href="../assets/js/imported/fullcalendar-4.3.1/packages/timegrid/main.css" rel="stylesheet" />
+
+  <!-- all the scripts fromg the library for the calender -->
+  <script src="../assets/js/imported/fullcalendar-4.3.1/packages/core/main.js"></script>
+  <script src="../assets/js/imported/fullcalendar-4.3.1/packages/daygrid/main.js"></script>
+  <script src="../assets/js/imported/fullcalendar-4.3.1/packages/timegrid/main.js"></script>
+
+  <!-- custom script for the calender -->
   <script src="../assets/js/calender.js"></script>
+
 
   <style>
     body {
@@ -26,11 +33,11 @@
       max-width: 900px;
       margin: 0 auto;
     }
-</style>
+  </style>
 </head>
 <body>
 
-   <div id="calendar'></div>
+   <div id="calendar"></div>
 
 </body>
 </html>

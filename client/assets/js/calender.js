@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
 
+    
 // TODO: this information needs to come from the database
 
 const allTheEvents = [
@@ -53,19 +54,26 @@ const allTheEvents = [
     }
     ];
 
-$('#calendar').fullCalendar({
-  header: {
-    right: 'prev,next today', //positions the the prev/next button on the right 
-    center: 'title', //sets the title of the month to center
-    // left: 'month,basicWeek,basicDay' //positions the the prev/next button on the left 
-    left: 'month' //positions the the prev/next button on the left 
-  },
-  // defaultDate: '2018-02-16',
-  navLinks: true, // click on day/week names to navigate views
-  editable: true,
-  eventLimit: true, // add "more" link when there are too many events in a day
-  events: allTheEvents,
-  eventOverlap: false // to avoid overlapping
-});
+
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'dayGrid', 'timeGrid' ],
+      header: {
+        right: 'prev,next today', //positions the the prev/next button on the right 
+        center: 'title', //sets the title of the month to center
+        left: 'dayGridMonth,timeGridWeek,timeGridDay'
+        // left: 'month,basicWeek,basicDay' //positions the the prev/next button on the left 
+        // left: 'month' //positions the the prev/next button on the left 
+      },
+      // defaultDate: '2018-02-16',
+      navLinks: true, // click on day/week names to navigate views
+      editable: true,
+      eventLimit: true, // add "more" link when there are too many events in a day
+      events: allTheEvents,
+      eventOverlap: false // to avoid overlapping
+    });
+
+    calendar.render();
 
 });
