@@ -23,7 +23,6 @@
 </head>
 
 <body id="Repair-form">
-
 	<!-- Navbar Fixie -->
 	<!-- <nav class="navbar navbar-expand-lg mb-0 bg-white">
 		<div class="container">
@@ -49,13 +48,15 @@
 
 	<!-- Background div -->
 	<div style="background-image: url('../assets/img/bg3.jpg');" class="page-header">
-		<a href="index.html" class="home"><i class="material-icons mr-3 mb-1">home</i><u>HOME PAGE</u></a>
+		<button class="home btn btn-outline-light "><a href="index.html" class="d-flex align-items-center text-white">
+				<i class="material-icons mr-2">arrow_back</i>BACK HOME
+			</a></button>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-md-6 ml-auto mr-auto">
 
 					<!-- Title and progress section -->
-					<div class="card card-login">
+					<div class="card card-login pb-3">
 						<form class="form" method="" action="">
 							<div class="card-header card-header-danger text-center">
 								<h3 class="card-title">Repair Details</h3>
@@ -81,90 +82,110 @@
 							</div>
 
 							<!-- Description form -->
-							<h4 class="description text-center text-dark mt-5 d-flex justify-content-center"><i
-									class="material-icons mr-3">info</i>Please Login or <a href="index.html" class="text-danger">
-									&nbsp;Register&nbsp; </a>
-								before
-								continuing</h4>
+							<h4 class="description text-center text-dark mt-4 d-flex justify-content-center">
+								<i class="material-icons mr-3">info</i>Please Login or
+								<a href="" class="text-danger">
+									&nbsp;Register&nbsp;
+								</a>
+								before continuing
+							</h4>
 							<div class="card-body pages">
 
 								<!-- STEP 1: LOGIN -->
 								<div class="page" id="login">
-									<!-- First row -->
-									<div class="row mt-4">
+
+									<div class="row mt-3">
 
 										<!-- Email -->
 										<div class="col-md-6 d-flex align-items-center">
 											<div class="icon mt-3 ml-3">
 												<i class="material-icons my-auto mr-2">mail_outline</i>
 											</div>
-											<div class="form-group w-100">
+											<div class="form-group w-100 has-danger">
 												<label for="exampleMessage" class="bmd-label-floating">Email</label>
-												<input type="password" class="form-control">
+												<input type="password" class="form-control" />
 											</div>
 										</div>
 
 										<!-- Password -->
-										<div class=" col-md-6 d-flex align-items-center">
+										<div class="col-md-6 d-flex align-items-center">
 											<div class="icon mt-3 ml-3">
 												<i class="material-icons my-auto mr-2">lock_outline</i>
 											</div>
-											<div class="form-group w-100">
+											<div class="form-group w-100 has-danger">
 												<label for="exampleMessage" class="bmd-label-floating">Password</label>
-												<input type="password" class="form-control has-danger">
+												<input type="password" class="form-control has-danger" />
 											</div>
 										</div>
 									</div>
 
-									<!-- Second row -->
-									<div class="row d-none">
+									<!-- REGISTER -->
 
-										<!-- What is the issue? -->
-										<div class="col-md-6 mt-3 d-flex align-items-center">
+									<div class="row register">
+
+										<!-- First name -->
+										<div class="col-md-6 d-flex align-items-center">
 											<div class="icon mt-3 ml-3">
-												<i class="material-icons my-auto mr-2">lock_outline</i>
+												<i class="material-icons my-auto mr-2">looks_one</i>
 											</div>
-											<select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1"
-												value="What is the problem?">
-												<option value="" disabled selected hidden>What is the problem?</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
-											</select>
-										</div>
-									</div>
-
-									<!-- Third row -->
-									<div class="row d-none">
-
-										<!-- Description -->
-										<div class="col-md-12">
-											<div class="form-group d-flex">
-												<div class="input-group-prepend">
-													<span class="input-group-text">
-														<i class="material-icons mx-3">
-															subject
-														</i>
-													</span>
-												</div>
-												<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-													placeholder="Please write a short descrition of the problem..."></textarea>
+											<div class="form-group w-100 has-danger">
+												<label class="bmd-label-floating">First Name</label>
+												<input type="text" class="form-control" name="firstName" />
 											</div>
 										</div>
-									</div>
 
-									<!-- Fourth row -->
-									<div class="row">
-
-										<!-- Button -->
-										<div class="col-md-12 mt-5">
-											<button class="btn btn-danger float-right">
-												Login<i class="material-icons ml-2">arrow_forward</i>
-											</button>
+										<!-- Last name -->
+										<div class="col-md-6 d-flex align-items-center">
+											<div class="icon mt-3 ml-3">
+												<i class="material-icons my-auto mr-2">looks_two</i>
+											</div>
+											<div class="form-group w-100 has-danger">
+												<label class="bmd-label-floating">Last Name</label>
+												<input type="text" class="form-control" name="lastName" />
+											</div>
 										</div>
 
+										<!-- Street -->
+										<div class="col-md-6 d-flex align-items-center">
+											<div class="icon mt-3 ml-3">
+												<i class="material-icons my-auto mr-2">home</i>
+											</div>
+											<div class="form-group w-100 has-danger">
+												<label for="exampleMessage" class="bmd-label-floating">Street Name</label>
+												<input type="address" class="form-control" name="streetName" />
+											</div>
+										</div>
+
+										<!-- House number -->
+										<div class="col-md-3">
+											<div class="form-group has-danger">
+												<label for="exampleMessage" class="bmd-label-floating">House Number</label>
+												<input type="text" class="form-control" name="houseNumber" />
+											</div>
+										</div>
+
+										<!-- Postal code -->
+										<div class="col-md-3">
+											<div class="form-group has-danger">
+												<label for="exampleMessage" class="bmd-label-floating">Postal Code</label>
+												<input type="text" class="form-control" name="postCode" />
+											</div>
+										</div>
+
+										<!-- Mobile -->
+										<div class="col-md-6 d-flex align-items-center">
+											<div class="icon mt-3 ml-3">
+												<i class="material-icons my-auto mr-2">phone</i>
+											</div>
+											<div class="form-group has-danger w-100">
+												<label for="exampleMessage" class="bmd-label-floating">Mobile Number</label>
+												<input type="phone" class="form-control" name="mobile" />
+											</div>
+										</div>
+
+
 									</div>
+
 								</div>
 
 								<!-- STEP 2: ISSUE -->
@@ -176,6 +197,16 @@
 								<!-- STEP 4: CHECKOUT -->
 								<div class="page" id="checkout"></div>
 
+								<div class="row">
+
+									<!-- Buttons -->
+									<div class="col-md-12 d-flex align-items-center justify-content-end">
+										<button class="btn btn-danger">
+											Login<i class="material-icons ml-2">arrow_forward</i>
+										</button>
+									</div>
+								</div>
+
 							</div>
 						</form>
 					</div>
@@ -183,7 +214,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<!-- Footer -->
 	<!-- <footer class="footer">
@@ -221,8 +251,6 @@
 			</div>
 		</div>
 	</footer> -->
-
-
 
 	<!-- *********** -->
 	<!-- JANA's CODE -->
@@ -300,7 +328,6 @@
 	<script src="../assets/js/selectIssues.js"></script>
 
 	<!-- //////////////////////////////////////////////////////// -->
-
 </body>
 
 </html>
