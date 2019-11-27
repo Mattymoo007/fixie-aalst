@@ -6,51 +6,51 @@ $(document).ready(function() {
 const allTheEvents = [
     {
         title: 'timeslot taken',
-        start: '2019-11-05T14:00:00',
-        end: '2019-11-05T16:00:00'
+        start: '2019-11-28T14:00:00',
+        end: '2019-11-28T16:00:00'
     },
     {
         title: 'timeslot taken',
-        start: '2019-11-05T16:00:00',
-        end: '2019-11-05T17:00:00'
+        start: '2019-11-28T16:00:00',
+        end: '2019-11-28T17:00:00'
     },
     {
         // id: 999,
         title: 'timeslot taken',
-        start: '2019-11-05T10:00:00',
-        end: '2019-11-05T11:00:00'
+        start: '2019-11-28T10:00:00',
+        end: '2019-11-28T11:00:00'
     },   
     {
         title: 'timeslot taken',
-        start: '2019-11-14T09:00:00',
-        end: '2019-11-14T10:00:00'
+        start: '2019-11-29T09:00:00',
+        end: '2019-11-29T10:00:00'
     },     
     {
         title: 'timeslot taken',
-        start: '2019-11-14T10:00:00',
-        end: '2019-11-14T11:00:00'
+        start: '2019-11-29T10:00:00',
+        end: '2019-11-29T11:00:00'
     },
     {
         title: 'timeslot taken',
-        start: '2019-11-25T14:00:00',
-        end: '2019-11-25T16:00:00'
+        start: '2019-11-29T14:00:00',
+        end: '2019-11-29T16:00:00'
     },
     {
         title: 'timeslot taken',
-        start: '2019-11-25T16:00:00',
-        end: '2019-11-25T17:00:00'
+        start: '2019-12-03T16:00:00',
+        end: '2019-12-03T17:00:00'
     },
     {
         // id: 999,
         title: 'timeslot taken',
-        start: '2019-11-25T10:00:00',
-        end: '2019-11-25T11:00:00'
+        start: '2019-12-03T10:00:00',
+        end: '2019-12-03T11:00:00'
     }
     ]
 
 
     var Calendar = FullCalendar.Calendar;
-    var Draggable = FullCalendarInteraction.Draggable
+    var Draggable = FullCalendarInteraction.Draggable;
 
     // the dragable list
     var containerEl = document.getElementById('external-events-list');
@@ -82,11 +82,14 @@ const allTheEvents = [
       },
       defaultView: 'timeGridWeek',
       firstDay: 1,
+      validRange: function(nowDate) {
+        return {
+          start: nowDate,
+        };
+      },
       slotDuration: '00:30', // 2 hours
-      // defaultDate: '2018-02-16',
       navLinks: true, // click on day/week names to navigate views
-    //   editable: false,
-    //   eventLimit: true, // add "more" link when there are too many events in a day
+      editable: false,
       events: allTheEvents,
       
       eventOverlap: false, // to avoid overlapping
@@ -102,19 +105,20 @@ const allTheEvents = [
           endTime: '16:00' // 4pm
         }
       ],
-      
-    // the drop-function:  
+      eventConstraint: 'businessHours', // to prevent that events can be dropped on business hours
+      // the drop-function:  
       droppable: true, // this allows things to be dropped onto the calendar
       drop: function(arg) {
         arg.draggedEl.parentNode.removeChild(arg.draggedEl);
         // const dateAppointment = arg.dateStr;
 
         console.log(arg.date);
+        console.log("date::", JSON.stringify({startdate: arg.date}))
         console.log(arg.dateStr);
         // console.log(calendarEl.getEventSources());
       },
-      edit: function(arg) {
-        console.log("edited");
+      eventDrop: function(info) {
+        console.log(info.event.start.getDay());
       },
       eventClick: function(info) {
         alert('Event: ' + info.event.title);
