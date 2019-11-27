@@ -1,4 +1,8 @@
 // All css for the front page
+html {
+  scroll-behavior: smooth;
+}
+
 #Front-page {
   .page-header {
     .container {
@@ -17,15 +21,18 @@
     .social-line {
       justify-content: center;
       align-items: center;
+
       a {
         &.active {
           background-color: #fff;
           border-radius: 50%;
+
           i {
             color: #f44336;
           }
         }
       }
+
       .line {
         width: 100px;
         height: 2px;
