@@ -94,18 +94,26 @@ const allTheEvents = [
 
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
-        header: {
+      plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+      header: {
         right: 'prev,next today', //positions the the prev/next button on the right 
         center: 'title', //sets the title of the month to center
         left: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
       defaultView: 'timeGridWeek',
+      scrollTime: '09:00',
       firstDay: 1,
       validRange: function(nowDate) {
         return {
-          start: nowDate,
+          start: nowDate.add(1, 'days'),
         };
+      },
+      validRange: function(currentDate) {
+        // Generate a new date for manipulating in the next step
+        var startDate = new Date(currentDate.valueOf());
+        // Start at one day in the future
+        startDate.setDate(startDate.getDate() + 1);
+        return { start: startDate};
       },
       slotDuration: '00:30',
       navLinks: true, // click on day/week names to navigate views
