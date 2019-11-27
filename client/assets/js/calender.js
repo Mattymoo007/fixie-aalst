@@ -46,7 +46,7 @@ const allTheEvents = [
         start: '2019-11-25T10:00:00',
         end: '2019-11-25T11:00:00'
     }
-    ];
+    ]
 
 
     var Calendar = FullCalendar.Calendar;
@@ -60,7 +60,10 @@ const allTheEvents = [
         return {
           title: eventEl.innerText.trim(),
         //   todo: get the duration-information from the selected tasks
-          duration: '02:00'
+          duration: '02:00',
+          textColor: 'white',
+          backgroundColor: 'black',
+          editable: true
         }
       }
     });
@@ -83,7 +86,10 @@ const allTheEvents = [
       navLinks: true, // click on day/week names to navigate views
     //   editable: false,
     //   eventLimit: true, // add "more" link when there are too many events in a day
-      events: allTheEvents,
+      events: allTheEvents, 
+        // color: 'yellow',   // an option!
+        // textColor: 'black' // an option!;
+      
       eventOverlap: false, // to avoid overlapping
       businessHours: [
         {
@@ -99,17 +105,11 @@ const allTheEvents = [
       ],
       nowIndicator: true,
       
-      // the drop-function:  
+    // the drop-function:  
     //   editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
       drop: function(arg) {
-          confirm("you are going to add this appointment");
-          if (r == true) {
-            arg.draggedEl.parentNode.removeChild(arg.draggedEl);
-          };
-        // remove the element from the "Draggable Events" list
-
-        console.log("is dropped");
+        arg.draggedEl.parentNode.removeChild(arg.draggedEl);
       }
     });
 
