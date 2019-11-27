@@ -17,27 +17,43 @@ html {
 
 // CSS for repair form
 #Repair-form {
-  .card-login {
-    .social-line {
-      justify-content: center;
-      align-items: center;
+  .page-header {
+    padding: 80px 0 50px 0;
+    background-size: cover;
+    background-position: top center;
 
-      a {
-        &.active {
-          background-color: #fff;
-          border-radius: 50%;
+    .home {
+      z-index: 1;
+      position: absolute;
+      color: white;
+      top:40px;
+      left:40px;
+    }
 
-          i {
-            color: #f44336;
+    .card-login {
+      .social-line {
+        justify-content: center;
+        align-items: center;
+
+        a {
+          &.active {
+            background-color: #fff;
+            border-radius: 50%;
+
+            i {
+              color: #f44336;
+            }
           }
         }
-      }
 
-      .line {
-        width: 100px;
-        height: 2px;
-        background-color: white;
+        .line {
+          width: 100px;
+          height: 2px;
+          background-color: white;
+        }
       }
     }
   }
+
+
 }
