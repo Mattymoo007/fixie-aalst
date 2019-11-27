@@ -3,7 +3,6 @@ $(document).ready(function() {
 // this is the array that needs to be at the top of the repairform.js
 // This array needs to be filled during the registration process
 // all the information needs to be send to the database when the user confirms
-
 let planTheFix = {
     username: '',
     typeOfBike: '',
@@ -132,29 +131,26 @@ const allTheEvents = [
       drop: function(info) {
         // $('#your-fix').remove();
         info.draggedEl.parentNode.removeChild(info.draggedEl); // this is to delete only the draggable event itself
-        let pickedDate = info.date;
+        planTheFix['startTime'] = info.date;
         $('.date .next').prop('disabled', false);
         // console.log("date::", JSON.stringify({startdate: pickedDate}))
-        // console.log(calendarEl.getEventSources());
       },
       eventDrop: function(info) {
-        let pickedDate = info.event.start;
+        planTheFix['startTime'] = info.event.start;
         $('.date .next').prop('disabled', false);
         // console.log("date::", JSON.stringify({startdate: pickedDate}))
-      },
-      eventClick: function(info) {
-        alert('Event: ' + info.event.title);
-        alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-        alert('View: ' + info.view.type);
-    
-        // change the border color just for fun
-        info.el.style.borderColor = 'red';
       },
       nowIndicator: true,
     });
-    
-
+  
 
     calendar.render();
+
+    $('.date .next').click(function(e){
+      // planTheFix['startTime'] = pickedDate;
+      console.log(planTheFix);
+      console.log("information that is saved here: startDate = "+planTheFix['startTime'])
+    })
+
 
 });
