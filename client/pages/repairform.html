@@ -25,14 +25,14 @@
 <body id="Repair-form">
 
 	<!-- Navbar Fixie -->
-	<nav class="navbar navbar-expand-lg mb-0 bg-white">
+	<!-- <nav class="navbar navbar-expand-lg mb-0 bg-white">
 		<div class="container">
 			<div class="navbar-translate">
 				<a class="navbar-brand" href="index.html">
 					Fixie
 				</a>
 			</div>
-			<!-- Login to my Fixie -->
+
 			<form class="form-inline ml-auto">
 				<div class="form-group no-border has-danger">
 					<input type="email" class="form-control mr-4" placeholder="Email" />
@@ -45,11 +45,11 @@
 				</button>
 			</form>
 		</div>
-	</nav>
+	</nav> -->
 
 	<!-- Background div -->
-	<div
-		style="padding: 80px 0 50px 0; background-image: url('../assets/img/bg3.jpg'); background-size: cover; background-position: top center;">
+	<div style="background-image: url('../assets/img/bg3.jpg');" class="page-header">
+		<div class="home d-flex"><i class="material-icons mr-3">home</i>HOME</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-md-6 ml-auto mr-auto">
@@ -86,48 +86,43 @@
 									&nbsp;Register&nbsp; </a>
 								before
 								continuing</h4>
-							<div class="card-body">
+							<div class="card-body pages">
 
-								<!-- First row -->
-								<div class="row">
+								<!-- STEP 1: LOGIN -->
+								<div class="page" id="login">
+									<!-- First row -->
+									<div class="row mt-4">
 
-									<!-- Email -->
-									<div class="col-lg-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">mail_outline</i>
-												</span>
+										<!-- Email -->
+										<div class="col-md-6 d-flex align-items-center">
+											<div class="icon mt-3 ml-3">
+												<i class="material-icons my-auto mr-2">person</i>
 											</div>
-											<input type="email" class="form-control" placeholder="First Name...">
+											<div class="form-group w-100">
+												<label for="exampleMessage" class="bmd-label-floating">Email</label>
+												<input type="password" class="form-control">
+											</div>
+										</div>
+
+										<!-- Password -->
+										<div class=" col-md-6 d-flex align-items-center">
+											<div class="icon mt-3 ml-3">
+												<i class="material-icons my-auto mr-2">lock_outline</i>
+											</div>
+											<div class="form-group w-100">
+												<label for="exampleMessage" class="bmd-label-floating">Password</label>
+												<input type="password" class="form-control has-danger">
+											</div>
 										</div>
 									</div>
 
-									<!-- Password -->
-									<div class="col-lg-6">
-										<div class="input-group">
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons">lock_outline</i>
-												</span>
-											</div>
-											<input type="password" class="form-control" placeholder="Email...">
-										</div>
-									</div>
-								</div>
+									<!-- Second row -->
+									<div class="row d-none">
 
-								<!-- Second row -->
-								<div class="row">
-
-									<!-- What is the issue? -->
-									<div class="col-lg-6 mt-5">
-										<div class="form-group d-flex">
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons mx-3">
-														build
-													</i>
-												</span>
+										<!-- What is the issue? -->
+										<div class="col-md-6 mt-3 d-flex align-items-center">
+											<div class="icon mt-3 ml-3">
+												<i class="material-icons my-auto mr-2">lock_outline</i>
 											</div>
 											<select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1"
 												value="What is the problem?">
@@ -139,40 +134,56 @@
 											</select>
 										</div>
 									</div>
-								</div>
 
-								<!-- Third row -->
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="form-group d-flex">
-											<div class="input-group-prepend">
-												<span class="input-group-text">
-													<i class="material-icons mx-3">
-														subject
-													</i>
-												</span>
+									<!-- Third row -->
+									<div class="row d-none">
+
+										<!-- Description -->
+										<div class="col-md-12">
+											<div class="form-group d-flex">
+												<div class="input-group-prepend">
+													<span class="input-group-text">
+														<i class="material-icons mx-3">
+															subject
+														</i>
+													</span>
+												</div>
+												<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
+													placeholder="Please write a short descrition of the problem..."></textarea>
 											</div>
-											<textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-												placeholder="Please write a short descrition of the problem..."></textarea>
 										</div>
 									</div>
-								</div>
 
-								<div class="row">
-									<div class="col-lg-12 my-3">
-										<button class="btn btn-danger float-right">
-											Choose a date<i class="material-icons ml-2">arrow_forward</i>
-										</button>
+									<!-- Fourth row -->
+									<div class="row">
+
+										<!-- Button -->
+										<div class="col-md-12 my-3">
+											<button class="btn btn-danger float-right">
+												Login<i class="material-icons ml-2">arrow_forward</i>
+											</button>
+										</div>
+
 									</div>
 								</div>
 
+								<!-- STEP 2: ISSUE -->
+								<div class="page" id="issue"></div>
 
+								<!-- STEP 3: CALANDER -->
+								<div class="page" id="calander"></div>
+
+								<!-- STEP 4: CHECKOUT -->
+								<div class="page" id="checkout"></div>
+
+							</div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<!-- Footer -->
 	<!-- <footer class="footer">

@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    console.log("the dom is ready");
+    // console.log("the dom is ready");
 
     // toggle between login and registration on click and display the active link to the form as active
     $('#login-form-link').click(function(e) {
