@@ -59,11 +59,13 @@ const allTheEvents = [
       eventData: function(eventEl) {
         return {
           title: eventEl.innerText.trim(),
-        //   todo: get the duration-information from the selected tasks
+          //   todo: get the duration-information from the selected tasks
           duration: '02:00',
           textColor: 'white',
           backgroundColor: 'black',
-          editable: true
+          editable: true,
+          durationEditable: false,
+          id: "myFix"
         }
       }
     });
@@ -77,18 +79,15 @@ const allTheEvents = [
         right: 'prev,next today', //positions the the prev/next button on the right 
         center: 'title', //sets the title of the month to center
         left: 'timeGridWeek,timeGridDay'
-        // left: 'month,basicWeek,basicDay' //positions the the prev/next button on the left 
-        // left: 'month' //positions the the prev/next button on the left 
       },
       defaultView: 'timeGridWeek',
+      firstDay: 1,
       slotDuration: '00:30', // 2 hours
       // defaultDate: '2018-02-16',
       navLinks: true, // click on day/week names to navigate views
     //   editable: false,
     //   eventLimit: true, // add "more" link when there are too many events in a day
-      events: allTheEvents, 
-        // color: 'yellow',   // an option!
-        // textColor: 'black' // an option!;
+      events: allTheEvents,
       
       eventOverlap: false, // to avoid overlapping
       businessHours: [
@@ -103,15 +102,32 @@ const allTheEvents = [
           endTime: '16:00' // 4pm
         }
       ],
-      nowIndicator: true,
       
     // the drop-function:  
-    //   editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
       drop: function(arg) {
         arg.draggedEl.parentNode.removeChild(arg.draggedEl);
-      }
+        // const dateAppointment = arg.dateStr;
+
+        console.log(arg.date);
+        console.log(arg.dateStr);
+        // console.log(calendarEl.getEventSources());
+      },
+      edit: function(arg) {
+        console.log("edited");
+      },
+      eventClick: function(info) {
+        alert('Event: ' + info.event.title);
+        alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+        alert('View: ' + info.view.type);
+    
+        // change the border color just for fun
+        info.el.style.borderColor = 'red';
+      },
+      nowIndicator: true,
     });
+
+    $
 
     calendar.render();
 
