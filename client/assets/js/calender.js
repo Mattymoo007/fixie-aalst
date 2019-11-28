@@ -84,7 +84,7 @@ $(document).ready(function() {
     var calendarEl = document.getElementById('calendar');
 
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+    window.repairCalendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
       header: {
         right: 'prev,next today', //positions the the prev/next button on the right 
@@ -147,8 +147,5 @@ $(document).ready(function() {
       console.log(planTheFix);
       console.log("information that is saved here: startDate = "+planTheFix['startTime'])
     })
-    setTimeout(function(){
-      calendar.render();
-    }, 2000);
 
 });

@@ -13,6 +13,8 @@ $(document).ready(function() {
     totalTime: 0
   };
 
+  var currentPage = 0;
+
   $(".description a").on("click", function() {
     $("#login .register").toggleClass("show");
     event.preventDefault();
@@ -21,6 +23,9 @@ $(document).ready(function() {
   // Next and previous script
   $(".form .buttons .next").on("click", () => {
     movePage("next");
+    if(currentPage == 1){
+      window.repairCalendar.render();
+    };
   });
   $(".form .buttons .previous").on("click", () => {
     movePage("previous");
@@ -30,7 +35,7 @@ $(document).ready(function() {
   function movePage(direction) {
     event.preventDefault();
 
-    var currentPage = $(".page.show").index();
+    currentPage = $(".page.show").index();
     var pages = $(".page");
     pages.each(function() {
       $(this).removeClass("show");
@@ -72,4 +77,7 @@ $(document).ready(function() {
       icons.eq(newPage).addClass("active");
     }
   }
+  // setTimeout(function(){
+  //   window.repairCalendar.render();
+  // }, 2000);
 });
