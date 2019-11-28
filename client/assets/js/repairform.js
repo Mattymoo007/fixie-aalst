@@ -1,6 +1,18 @@
 $(document).ready(function() {
   // console.log("the dom is ready");
 
+  // this is the array that needs to be at the top of the repairform.js
+  // This array needs to be filled during the registration process
+  // all the information needs to be send to the database when the user confirms
+  let planTheFix = {
+    username: '',
+    typeOfBike: '',
+    message: '',
+    theIssues: [''],
+    startTime: '',
+    totalTime: 0
+  };
+
   $(".description a").on("click", function() {
     $("#login .register").toggleClass("show");
     event.preventDefault();

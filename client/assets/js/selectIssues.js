@@ -16,11 +16,10 @@ $( document ).ready(function() {
     ]
     
     // show the issues as radiobuttons
-    let radios = '<div>';
+    let radios = '';
     issues.forEach(issue => {
         radios += `<label for="${issue['class']}"><input type="checkbox" name="issue" value="${issue['class']}">${issue['description']}</label>`;
     });
-    radios += '</div>';
-    $('#typeBike').after(radios);
+    $('#selectIssue').append(radios);
     console.log('dit is een test ${issues}');
 });
