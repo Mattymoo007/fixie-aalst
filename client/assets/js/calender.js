@@ -1,16 +1,8 @@
 $(document).ready(function() {
-
-// this is the array that needs to be at the top of the repairform.js
-// This array needs to be filled during the registration process
-// all the information needs to be send to the database when the user confirms
+  
 let planTheFix = {
-  username: '',
-  typeOfBike: '',
-  message: '',
-  theIssues: [''],
-  startTime: '',
-  totalTime: 90
-}
+  totalTime: 0
+};
 
 // function to converts the totalTime to the format hh:mm , in order for the calander to accept it as a duration
 function timeConvert(min) {
@@ -61,7 +53,6 @@ const allTheEvents = [
       end: '2019-12-03T17:00:00'
   },
   {
-      // id: 999,
       title: 'timeslot taken',
       start: '2019-12-03T10:00:00',
       end: '2019-12-03T11:00:00'

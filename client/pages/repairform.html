@@ -18,33 +18,23 @@
 
 	<!-- Material Kit CSS -->
 	<link href="../assets/css/imported/material-kit.min.css?v=2.0.6" rel="stylesheet" />
+
+	<!-- Fullcalendar CSS -->
+	<link href="../assets/js/imported/fullcalendar-4.3.1/packages/core/main.css" rel="stylesheet" />
+	<link href="../assets/js/imported/fullcalendar-4.3.1/packages/daygrid/main.css" rel="stylesheet" />
+	<link href="../assets/js/imported/fullcalendar-4.3.1/packages/timegrid/main.css" rel="stylesheet" />
+	<link href="../assets/js/imported/fullcalendar-4.3.1/packages/list/main.css" rel="stylesheet">
+
+	<!-- custom css -->
 	<link href="../assets/css/main.min.css" rel="stylesheet" />
+	<link href="../assets/css/repairform.min.css" rel="stylesheet" />
+	<link href="../assets/css/calender.min.css" rel="stylesheet" />
+
+	<!-- jquery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 </head>
 
 <body id="Repair-form">
-	<!-- Navbar Fixie -->
-	<!-- <nav class="navbar navbar-expand-lg mb-0 bg-white">
-		<div class="container">
-			<div class="navbar-translate">
-				<a class="navbar-brand" href="index.html">
-					Fixie
-				</a>
-			</div>
-
-			<form class="form-inline ml-auto">
-				<div class="form-group no-border has-danger">
-					<input type="email" class="form-control mr-4" placeholder="Email" />
-				</div>
-				<div class="form-group no-border has-danger">
-					<input type="password" class="form-control mr-4" placeholder="Password" />
-				</div>
-				<button type="submit" class="btn btn-outline-danger btn-round">
-					my fixie
-				</button>
-			</form>
-		</div>
-	</nav> -->
 
 	<!-- Background div -->
 	<div style="background-image: url('../assets/img/bg3.jpg');" class="page-header">
@@ -81,18 +71,20 @@
 								</div>
 							</div>
 
-							<!-- Description form -->
-							<h4 class="description text-center text-dark mt-4 d-flex justify-content-center">
-								<i class="material-icons mr-3">info</i>Please Login or
-								<a href="" class="text-danger">
-									&nbsp;Register&nbsp;
-								</a>
-								before continuing
-							</h4>
+
 							<div class="card-body pages">
 
 								<!-- STEP 1: LOGIN -->
-								<div class="page" id="login">
+								<div class="page show" id="login">
+
+									<!-- Description form -->
+									<h4 class="description text-center text-dark mt-4 d-flex justify-content-center">
+										<i class="material-icons mr-3">info</i>Please Login or
+										<a href="" class="text-danger">
+											&nbsp;Register&nbsp;
+										</a>
+										before continuing.
+									</h4>
 
 									<div class="row mt-3">
 
@@ -182,17 +174,55 @@
 												<input type="phone" class="form-control" name="mobile" />
 											</div>
 										</div>
-
-
 									</div>
 
 								</div>
 
 								<!-- STEP 2: ISSUE -->
-								<div class="page show" id="issue"></div>
+								<div class="page" id="issue">
+
+									<!-- Description form -->
+									<h4 class="description text-center text-dark mt-4 d-flex justify-content-center">
+										<i class="material-icons mr-3">info</i>Please select your issue below.
+									</h4>
+
+									<div class="row">
+
+										<!-- Select issue -->
+										<div class="col-md-6 d-flex align-items-center">
+											<div class="icon mt-3 ml-3">
+												<i class="material-icons my-auto mr-2">build</i>
+											</div>
+											<div class="form-group w-100 has-danger">
+												<label for="exampleFormControlSelect1">What is the issue?</label>
+												<select class="form-control selectpicker" data-style="btn btn-link" id="selectIssue">
+												</select>
+											</div>
+										</div>
+
+										<!-- Explanation -->
+										<div class="col-md-12 d-flex align-items-start mt-2">
+											<div class="icon mt-3 ml-3">
+												<i class="material-icons my-auto mr-2">description</i>
+											</div>
+											<div class="form-group has-danger w-100">
+												<label for="exampleFormControlTextarea1">Description</label>
+												<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
 
 								<!-- STEP 3: CALANDER -->
-								<div class="page" id="calander"></div>
+								<div class="page" id="pickadate">
+									<div id="wrap">
+										<div id="your-fix-list">
+											<div class="fc-event">Pick your fix here<br>and drop it on the calander on the moment you want
+											</div>
+										</div>
+										<div id="calendar"></div>
+									</div>
+								</div>
 
 								<!-- STEP 4: CHECKOUT -->
 								<div class="page" id="checkout"></div>
@@ -216,103 +246,7 @@
 		</div>
 	</div>
 
-	<!-- Footer -->
-	<!-- <footer class="footer">
-		<div class="container">
-			<nav class="float-left">
-				<ul>
-					<li>
-						<a href="https://www.creative-tim.com">
-							Creative Tim
-						</a>
-					</li>
-					<li>
-						<a href="https://creative-tim.com/presentation">
-							About Us
-						</a>
-					</li>
-					<li>
-						<a href="http://blog.creative-tim.com">
-							Blog
-						</a>
-					</li>
-					<li>
-						<a href="https://www.creative-tim.com/license">
-							Licenses
-						</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="copyright float-right">
-				&copy;
-				<script>
-					document.write(new Date().getFullYear())
-				</script>, made with <i class="material-icons">favorite</i> by
-				<a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-			</div>
-		</div>
-	</footer> -->
 
-	<!-- *********** -->
-	<!-- JANA's CODE -->
-	<!-- *********** -->
-
-	<!-- <h1>Repair Form</h1>
-	<div class="process">
-		<ul>
-			<li class="login active">log in</li>
-			<li class="issue">tell us about the issue</li>
-			<li class="date">pick a date</li>
-			<li class="summary">check the price and confirm</li>
-		</ul>
-	</div>
-	<div class="steps">
-		<div class="step login">
-			<h2>tell us who you are</h2>
-			<div class="makeChoise">
-				<span>
-					<a href="#" class="active" id="login-form-link">Login</a>
-				</span>
-				<span>
-					<a href="#" id="register-form-link">Register</a>
-				</span>
-			</div>
-
-			<div id="login-form">
-				<input type="text" name="username" id="username" placeholder="Username" />
-				<input type="password" name="password" id="password" placeholder="Password" />
-				<button id="login">Login</button>
-			</div>
-
-			<div id="register-form">
-				<input type="text" name="username" id="username" placeholder="Username" />
-				<input type="text" name="phone" id="phone" placeholder="Phone" />
-				<input type="email" name="email" id="email" placeholder="Email Address" />
-				<input type="password" name="password" id="password" placeholder="Password" />
-				<input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" />
-				<button id="register">Register</button>
-			</div>
-		</div>
-
-		<div class="step issue">
-			<h2>tell us what the problem is</h2>
-			<input type="text" name="typeBike" id="typeBike" placeholder="typeBike" />
-			<button class="back">back</button>
-			<button class="next">next</button>
-		</div>
-
-		<div class="step date">
-			<h2>pick a date</h2>
-			<button class="back">back</button>
-			<button class="next">next</button>
-		</div>
-
-		<div class="step summary">
-			<h2>see the price and confirm</h2>
-			<button class="back">back</button>
-			<button class="confirm">confirm</button>
-		</div>
-	</div> -->
 
 	<!-- //////////////////////////////////////////////////////// -->
 	<!-- Core JS -->
@@ -323,10 +257,18 @@
 	<!-- Imported JS -->
 	<script src="../assets/js/imported/material-kit.js" type="text/javascript"></script>
 
+	<!-- fullcalandar JS -->
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/core/main.js"></script>
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/daygrid/main.js"></script>
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/timegrid/main.js"></script>
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/interaction/main.js"></script>
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/list/main.js"></script>
+
 	<!-- Custom JS -->
 	<script src="../assets/js/main.js"></script>
 	<script src="../assets/js/repairform.js"></script>
 	<script src="../assets/js/selectIssues.js"></script>
+	<script src="../assets/js/calender.js"></script>
 
 	<!-- //////////////////////////////////////////////////////// -->
 </body>
