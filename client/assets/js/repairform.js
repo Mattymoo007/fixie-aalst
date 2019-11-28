@@ -6,14 +6,30 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
-  $(".form .buttons .next").on("click", nextPage);
-  // $(".card-body .buttons .previous").on("click", previousPage);
+  // Next and previous script
+  $(".form .buttons .next").on("click", () => {
+    movePage("next");
+  });
+  $(".form .buttons .previous").on("click", () => {
+    movePage("previous");
+  });
 
-  function nextPage() {
-    var currentPage = $(".pages")
-      .children("show")
-      .index();
-    console.log(currentPage);
+  function movePage(direction) {
+    event.preventDefault();
+
+    var pages = $(".page");
+
+    pages.each(function(i) {
+      if ($(this).hasClass("show")) {
+        $(this).removeClass("show");
+        return (currentPage = i);
+      }
+    });
+    if (direction === "next") {
+      pages.eq(currentPage + 1).addClass("show");
+    } else if (direction === "previous") {
+      pages.eq(currentPage - 1).addClass("show");
+    }
   }
 
   // // toggle between login and registration on click and display the active link to the form as active
