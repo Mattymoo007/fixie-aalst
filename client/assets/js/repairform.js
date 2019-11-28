@@ -5,11 +5,11 @@ $(document).ready(function() {
   // This array needs to be filled during the registration process
   // all the information needs to be send to the database when the user confirms
   let planTheFix = {
-    username: '',
-    typeOfBike: '',
-    message: '',
-    theIssues: [''],
-    startTime: '',
+    username: "",
+    typeOfBike: "",
+    message: "",
+    theIssues: [""],
+    startTime: "",
     totalTime: 0
   };
 
@@ -39,9 +39,11 @@ $(document).ready(function() {
     if (direction === "next") {
       pages.eq(currentPage + 1).addClass("show");
       buttonToggle();
+      activeIcon();
     } else if (direction === "previous") {
       pages.eq(currentPage - 1).addClass("show");
       buttonToggle();
+      activeIcon();
     }
 
     function buttonToggle() {
@@ -58,6 +60,16 @@ $(document).ready(function() {
           $(".form .buttons .previous").show();
         }
       }
+    }
+
+    // Toggles active icon
+    function activeIcon() {
+      var newPage = $(".page.show").index();
+      var icons = $(".social-line a");
+      icons.each(function() {
+        $(this).removeClass("active");
+      });
+      icons.eq(newPage).addClass("active");
     }
   }
 });
