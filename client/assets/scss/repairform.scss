@@ -45,10 +45,15 @@
         }
       }
       .pages {
+        .page{
+          display: none;
+          &.show {
+            display: initial;
+          }
+        }
         #login {
           .register {
             display: none;
-
             &.show {
               display: flex;
             }
@@ -68,6 +73,9 @@
               .fc-event{
                 padding: 5px;
               }
+            }
+            #calendar{
+              min-height: 500px;
             }
           }
         }
