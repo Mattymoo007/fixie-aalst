@@ -1,12 +1,12 @@
 $(document).ready(function() {
-  // console.log("the dom is ready");
 
+  // Toggles register form
   $(".description a").on("click", function() {
     $("#login .register").toggleClass("show");
     event.preventDefault();
   });
 
-  // Next and previous script
+  // Next and previous button listeners
   $(".form .buttons .next").on("click", () => {
     movePage("next");
   });
@@ -15,11 +15,14 @@ $(document).ready(function() {
   });
   $(".form .buttons .previous").hide();
 
+  // Switches page divs in repair form
   function movePage(direction) {
     event.preventDefault();
 
     var currentPage = $(".page.show").index();
     var pages = $(".page");
+    var nextBtn = $(".form .buttons .next");
+    var previousBtn = $(".form .buttons .previous");
     pages.each(function() {
       $(this).removeClass("show");
     });
@@ -27,25 +30,38 @@ $(document).ready(function() {
     if (direction === "next") {
       pages.eq(currentPage + 1).addClass("show");
       buttonToggle();
+      activeIcon();
     } else if (direction === "previous") {
       pages.eq(currentPage - 1).addClass("show");
       buttonToggle();
+      activeIcon();
     }
 
+    // Hides and shows next and previous buttons
     function buttonToggle() {
       var newPage = $(".page.show").index();
-      if (newPage >= 1 && newPage < 3) {
-        $(".form .buttons .next").show();
-        $(".form .buttons .previous").show();
+      if (newPage >= 2 && newPage < 3) {
+        nextBtn.show();
+        previousBtn.show();
       } else {
-        if (newPage <= 0) {
-          $(".form .buttons .next").show();
-          $(".form .buttons .previous").hide();
+        if (newPage <= 1) {
+          nextBtn.show();
+          previousBtn.hide();
         } else if (newPage >= 3) {
-          $(".form .buttons .next").hide();
-          $(".form .buttons .previous").show();
+          nextBtn.hide();
+          previousBtn.show();
         }
       }
+    }
+
+    // Toggles active icon
+    function activeIcon() {
+      var newPage = $(".page.show").index();
+      var icons = $(".social-line a");
+      icons.each(function() {
+        $(this).removeClass("active");
+      });
+      icons.eq(newPage).addClass("active");
     }
   }
 });
