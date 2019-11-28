@@ -1,20 +1,3 @@
-// All css for the front page
-html {
-  scroll-behavior: smooth;
-}
-
-#Front-page {
-  .page-header {
-    .container {
-      .row {
-        .brand {
-          color: rgba(255, 255, 255, 0.5);
-        }
-      }
-    }
-  }
-}
-
 // CSS for repair form
 #Repair-form {
   .page-header {
@@ -22,6 +5,7 @@ html {
     background-size: cover;
     background-position: top center;
     min-height: 100vh;
+
     // height: auto;
     // height: auto;
     .home {

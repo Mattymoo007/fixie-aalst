@@ -1,0 +1,17 @@
+// All css for the front page
+html {
+  scroll-behavior: smooth;
+}
+
+#Front-page {
+  .page-header {
+    .container {
+      .row {
+        .brand {
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+}
+
