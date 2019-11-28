@@ -26,8 +26,17 @@ $(document).ready(function() {
       }
     });
     if (direction === "next") {
-      pages.eq(currentPage + 1).addClass("show");
+      if (currentPage > 2) {
+        $(".form .buttons .next").hide();
+        $(".form .buttons .previous").show();
+      } else {
+        pages.eq(currentPage + 1).addClass("show");
+      }
     } else if (direction === "previous") {
+      if (currentPage === 1) {
+        $(".form .buttons .previous").hide();
+        $(".form .buttons .next").show();
+      }
       pages.eq(currentPage - 1).addClass("show");
     }
   }
