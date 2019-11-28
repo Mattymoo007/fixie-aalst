@@ -52,6 +52,8 @@ $(document).ready(function() {
           previousBtn.show();
         }
       }
+      console.log(newPage);
+      
     }
 
     // Toggles active icon
