@@ -18,14 +18,18 @@ $(document).ready(function () {
 
         fetch('http://localhost:9000/api/login.php', requestOptions)
             .then(response => {
-                response.json();
+                return response.json();
             })
             .then(result => {
-                console.log(result);
+                return console.log(result);
             })
             .catch(error => {
-                console.log('error', error);
+                return console.log('error', error);
             });
+
+        // .then(response => response.json())
+        // .then(result => console.log(result))
+        // .catch(error => console.log('error', error));
     });
 
 });
