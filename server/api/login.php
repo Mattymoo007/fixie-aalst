@@ -27,5 +27,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_SERVER["CONTENT_TYPE"] == "applica
     $response["message"] = "Wrong username or password (retry) or Register first!";
    }
    $json = json_encode($response);
-    echo $json;
+   echo $json;
 }
