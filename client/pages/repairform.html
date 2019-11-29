@@ -32,6 +32,15 @@
 
 	<!-- jquery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+	<!-- fullcalandar JS -->
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/core/main.js"></script>
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/daygrid/main.js"></script>
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/timegrid/main.js"></script>
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/interaction/main.js"></script>
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/list/main.js"></script>
+
+
 </head>
 
 <body id="Repair-form">
@@ -200,7 +209,13 @@
 											</div>
 										</div>
 
-										<!-- Explanation -->
+										<div class="col-md-6 d-flex align-items-center">
+											<button class="btn btn-outline plusIssue mr-2">
+												<i class="material-icons mr-2">add</i>Other issue
+											</button>
+										</div>
+
+										<!-- Explanation
 										<div class="col-md-12 d-flex align-items-start mt-2">
 											<div class="icon mt-3 ml-3">
 												<i class="material-icons my-auto mr-2">description</i>
@@ -209,7 +224,7 @@
 												<label for="exampleFormControlTextarea1">Description</label>
 												<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
 											</div>
-										</div>
+										</div> -->
 									</div>
 								</div>
 
@@ -217,8 +232,7 @@
 								<div class="page" id="pickadate">
 									<div id="wrap">
 										<div id="your-fix-list">
-											<div class="fc-event">Pick your fix here<br>and drop it on the calander on the moment you want
-											</div>
+											<div class="fc-event" >Pick your fix here<br>and drop it on the calander on the moment you want</div>
 										</div>
 										<div id="calendar"></div>
 									</div>
@@ -258,17 +272,18 @@
 	<script src="../assets/js/imported/material-kit.js" type="text/javascript"></script>
 
 	<!-- fullcalandar JS -->
-	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/core/main.js"></script>
+	<!-- <script src="../assets/js/imported/fullcalendar-4.3.1/packages/core/main.js"></script>
 	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/daygrid/main.js"></script>
 	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/timegrid/main.js"></script>
 	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/interaction/main.js"></script>
-	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/list/main.js"></script>
+	<script src="../assets/js/imported/fullcalendar-4.3.1/packages/list/main.js"></script> -->
 
 	<!-- Custom JS -->
 	<script src="../assets/js/main.js"></script>
+	<script src="../assets/js/calender.js"></script>
 	<script src="../assets/js/repairform.js"></script>
 	<script src="../assets/js/selectIssues.js"></script>
-	<script src="../assets/js/calender.js"></script>
+	<!-- <script src="../assets/js/calender.js"></script> -->
 
 	<!-- //////////////////////////////////////////////////////// -->
 </body>

@@ -6,11 +6,14 @@ $(document).ready(function() {
     { description: "fix my whole bike", class: "whole", time: 180, cost: 200 }
   ];
 
-  // show the issues as radiobuttons
+  // show the issues as select
   let selects = "";
   issues.forEach(issue => {
-    // selects += `<label for="${issue['class']}"><input type="checkbox" name="issue" value="${issue['class']}">${issue['description']}</label>`;
     selects += `<option>${issue["description"]}</option>hello`;
   });
   $("#selectIssue").append(selects);
+
+
+  $('plus').
+   
 });
