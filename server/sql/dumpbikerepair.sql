@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 28 nov. 2019 à 14:03
+-- Généré le :  ven. 29 nov. 2019 à 15:25
 -- Version du serveur :  10.3.16-MariaDB
 -- Version de PHP :  7.3.7
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `bikerepair`
 --
-CREATE DATABASE IF NOT EXISTS `bikerepair` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `bikerepair`;
 
 -- --------------------------------------------------------
 
@@ -30,7 +28,6 @@ USE `bikerepair`;
 -- Structure de la table `bookcal`
 --
 
-DROP TABLE IF EXISTS `bookcal`;
 CREATE TABLE `bookcal` (
   `bookingID` mediumint(8) UNSIGNED NOT NULL,
   `dday` date NOT NULL,
@@ -40,19 +37,12 @@ CREATE TABLE `bookcal` (
   `custID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- RELATIONS POUR LA TABLE `bookcal`:
---   `custID`
---       `customer` -> `custID`
---
-
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `customer`
 --
 
-DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `custID` int(11) NOT NULL,
   `lastname` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -60,7 +50,7 @@ CREATE TABLE `customer` (
   `address` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `postalcode` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `passwd` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `creatDate` date NOT NULL DEFAULT current_timestamp(),
   `creatTime` time NOT NULL DEFAULT current_timestamp(),
@@ -68,16 +58,15 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- RELATIONS POUR LA TABLE `customer`:
---
-
---
 -- Déchargement des données de la table `customer`
 --
 
-INSERT INTO `customer` (`custID`, `lastname`, `name`, `address`, `postalcode`, `email`, `password`, `phone`, `creatDate`, `creatTime`, `status`) VALUES
+INSERT INTO `customer` (`custID`, `lastname`, `name`, `address`, `postalcode`, `email`, `passwd`, `phone`, `creatDate`, `creatTime`, `status`) VALUES
 (1, 'GINNEBERGE', 'Peter', 'Dendermonde Steenweg', '9200', 'p.ginneberge@gmail.com', '123456', '0465846878', '0000-00-00', '00:00:00', 1),
-(2, 'Bracke', 'Matthew', 'Gent', '9000', 'matthew@gmail.com', '123456', '0465846878', '0000-00-00', '00:00:00', 1);
+(2, 'Bracke', 'Matthew', 'Gent', '9000', 'matthew@gmail.com', '123456', '0465846878', '0000-00-00', '00:00:00', 1),
+(3, 'NEZZI', 'Felicien', 'Denderstraat 76 bus 1 Aalst', '9300', 'fnezzi@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0484624269', '2019-11-29', '13:46:55', 1),
+(4, 'NEZZI', 'Felicien', 'Denderstraat 76 bus 1 Aalst', '9300', 'fnezzi@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0484624269', '2019-11-29', '13:52:47', 1),
+(5, 'NEZZI', 'Felicien', 'Denderstraat 76 bus 1 Aalst', '9300', 'fnezzi@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0484624269', '2019-11-29', '13:54:08', 1);
 
 -- --------------------------------------------------------
 
@@ -85,7 +74,6 @@ INSERT INTO `customer` (`custID`, `lastname`, `name`, `address`, `postalcode`, `
 -- Structure de la table `invoice`
 --
 
-DROP TABLE IF EXISTS `invoice`;
 CREATE TABLE `invoice` (
   `invID` int(11) NOT NULL,
   `Name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -99,17 +87,12 @@ CREATE TABLE `invoice` (
   `endTime` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- RELATIONS POUR LA TABLE `invoice`:
---
-
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `issue`
 --
 
-DROP TABLE IF EXISTS `issue`;
 CREATE TABLE `issue` (
   `issueID` int(11) NOT NULL,
   `description` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -117,10 +100,6 @@ CREATE TABLE `issue` (
   `basicCost` decimal(11,0) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- RELATIONS POUR LA TABLE `issue`:
---
 
 --
 -- Déchargement des données de la table `issue`
@@ -136,15 +115,10 @@ INSERT INTO `issue` (`issueID`, `description`, `basicTime`, `basicCost`, `status
 -- Structure de la table `typebike`
 --
 
-DROP TABLE IF EXISTS `typebike`;
 CREATE TABLE `typebike` (
   `tbikeID` int(11) NOT NULL,
   `description` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- RELATIONS POUR LA TABLE `typebike`:
---
 
 --
 -- Déchargement des données de la table `typebike`
@@ -161,7 +135,6 @@ INSERT INTO `typebike` (`tbikeID`, `description`) VALUES
 -- Structure de la table `workprocess`
 --
 
-DROP TABLE IF EXISTS `workprocess`;
 CREATE TABLE `workprocess` (
   `workID` int(11) NOT NULL,
   `bookingID` int(11) NOT NULL,
@@ -180,34 +153,14 @@ CREATE TABLE `workprocess` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- RELATIONS POUR LA TABLE `workprocess`:
---   `issueID`
---       `issue` -> `issueID`
---
-
---
 -- Index pour les tables déchargées
 --
-
---
--- Index pour la table `bookcal`
---
-ALTER TABLE `bookcal`
-  ADD PRIMARY KEY (`bookingID`),
-  ADD KEY `cust_id` (`custID`);
 
 --
 -- Index pour la table `customer`
 --
 ALTER TABLE `customer`
-  ADD PRIMARY KEY (`custID`),
-  ADD KEY `ilastname` (`lastname`);
-
---
--- Index pour la table `invoice`
---
-ALTER TABLE `invoice`
-  ADD PRIMARY KEY (`invID`);
+  ADD PRIMARY KEY (`custID`);
 
 --
 -- Index pour la table `issue`
@@ -239,7 +192,7 @@ ALTER TABLE `workprocess`
 -- AUTO_INCREMENT pour la table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `custID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `custID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `issue`
@@ -262,12 +215,6 @@ ALTER TABLE `workprocess`
 --
 -- Contraintes pour les tables déchargées
 --
-
---
--- Contraintes pour la table `bookcal`
---
-ALTER TABLE `bookcal`
-  ADD CONSTRAINT `bookcal_ibfk_1` FOREIGN KEY (`custID`) REFERENCES `customer` (`custID`);
 
 --
 -- Contraintes pour la table `workprocess`
