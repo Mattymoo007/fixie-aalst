@@ -28,4 +28,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_SERVER["CONTENT_TYPE"] == "applica
    }
    $json = json_encode($response);
     echo $json;
+
 }
