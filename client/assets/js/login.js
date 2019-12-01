@@ -1,13 +1,16 @@
 $(document).ready(function () {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-    $("#login").on("click", (event) => {
+    $("#loginButton").on("click", (event) => {
         event.preventDefault();
+        $(".loginForm #error").empty();
 
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
+        // testvalues: p.ginneberge@gmail.com en 123456
+        let mail = $("#loginemail").val();
+        let pswd = $("#loginpassword").val();
 
-        var raw = "{\n	\"email\":\"p.ginneberge@gmail.com\",\n	\"password\":\"123456\"\n}";
-        //  var raw = JSON.stringify({username:"p.ginneberge@gmail.com",  password:"123456"});
+        var raw = JSON.stringify({ email: mail, password: pswd });
 
         var requestOptions = {
             method: 'POST',
@@ -21,15 +24,21 @@ $(document).ready(function () {
                 return response.json();
             })
             .then(result => {
-                return console.log(result);
+                if (result.user) {
+                    localStorage.setItem('user', JSON.stringify(result));
+                    if (location.href.split('/').pop() == "index.html") {
+                        window.location.replace("./customer.html");
+                    }
+                } else {
+                    $(".loginForm #error").append(result.message);
+                    // console.log(result.message);
+
+                }
             })
             .catch(error => {
-                return console.log('error', error);
+                console.log('error', error);
             });
 
-        // .then(response => response.json())
-        // .then(result => console.log(result))
-        // .catch(error => console.log('error', error));
     });
 
 });

@@ -31,14 +31,15 @@
 				</a>
 			</div>
 			<!-- Login to my Fixie -->
-			<form class="form-inline ml-auto">
+			<form class="form-inline ml-auto loginForm">
+				<span id="error"></span>
 				<div class="form-group no-border has-danger">
 					<input type="email" class="form-control mr-4" id="loginemail" placeholder="Email" />
 				</div>
 				<div class="form-group no-border has-danger">
 					<input type="password" class="form-control mr-4" id="loginpassword" placeholder="Password" />
 				</div>
-				<button id="login" type="submit" class="btn btn-outline-danger btn-round">
+				<button id="loginButton" type="submit" class="btn btn-outline-danger btn-round">
 					my fixie
 				</button>
 			</form>
