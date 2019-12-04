@@ -87,8 +87,10 @@
 
 									<!-- Description form -->
 									<h4 class="description text-center text-dark mt-4 d-flex justify-content-center">
-										<i class="material-icons mr-3">info</i>Please Login or
-										<a href="" class="text-danger">
+										<i class="material-icons mr-3">info</i>Please <a href="" class="text-danger login">
+											&nbsp;Login&nbsp;
+										</a> or
+										<a href="" class="text-danger register-x">
 											&nbsp;Register&nbsp;
 										</a>
 										before continuing.
@@ -103,7 +105,7 @@
 											</div>
 											<div class="form-group w-100 has-danger">
 												<label for="exampleMessage" class="bmd-label-floating">Email</label>
-												<input type="password" class="form-control" />
+												<input type="email" class="form-control" id="email" />
 											</div>
 										</div>
 
@@ -114,7 +116,7 @@
 											</div>
 											<div class="form-group w-100 has-danger">
 												<label for="exampleMessage" class="bmd-label-floating">Password</label>
-												<input type="password" class="form-control has-danger" />
+												<input type="password" class="form-control has-danger" id="password" />
 											</div>
 										</div>
 									</div>
@@ -207,8 +209,7 @@
 											</div>
 											<div class="form-group w-100 has-danger">
 												<label for="exampleFormControlSelect1">What is the issue?</label>
-												<select class="form-control selectpicker" data-style="btn btn-link"
-													id="selectIssue">
+												<select class="form-control selectpicker" data-style="btn btn-link" id="selectIssue">
 												</select>
 											</div>
 										</div>
@@ -219,16 +220,6 @@
 											</button>
 										</div>
 
-										<!-- Explanation
-										<div class="col-md-12 d-flex align-items-start mt-2">
-											<div class="icon mt-3 ml-3">
-												<i class="material-icons my-auto mr-2">description</i>
-											</div>
-											<div class="form-group has-danger w-100">
-												<label for="exampleFormControlTextarea1">Description</label>
-												<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-											</div>
-										</div> -->
 									</div>
 								</div>
 
@@ -249,7 +240,11 @@
 							</div>
 
 							<!-- Buttons -->
-							<div class="col-md-12 px-4 buttons d-flex justify-content-end">
+							<div class="col-md-12 px-4 buttons d-flex justify-content-end align-items-center">
+								<span class="message mr-3"></span>
+								<button class="btn btn-danger login mr-2">
+									<i class="material-icons mr-2">face</i>Login
+								</button>
 								<button class="btn btn-danger previous mr-2">
 									<i class="material-icons mr-2">arrow_back</i>Back
 								</button>

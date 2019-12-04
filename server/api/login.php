@@ -7,10 +7,11 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 header("Access-Control-Allow-Origin: *");
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && $_SERVER["CONTENT_TYPE"] == "application/json") {
 
     $data = json_decode(file_get_contents("php://input"));
- 
+
     $email = $data->email;
     $password = $data->password;
 
@@ -20,13 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $_SERVER["CONTENT_TYPE"] == "applica
 
     $response["user"] = $result;
 
-   if ($result) {
-    $response["message"] = "Success! you are logged in!";
-   }
-   else {
-    $response["message"] = "Wrong username or password (retry) or Register first!";
-   }
-   $json = json_encode($response);
+    if ($result) {
+        $response["message"] = "Success! you are logged in!";
+    } else {
+        $response["message"] = "Wrong username or password (retry) or Register first!";
+    }
+    $json = json_encode($response);
     echo $json;
-
 }

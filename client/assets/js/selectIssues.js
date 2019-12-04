@@ -1,19 +1,29 @@
 $(document).ready(function() {
-  // todo: fetch this data from the database
-  const issues = [
-    { description: "flat tyre", class: "tyre", time: 30, cost: 50 },
-    { description: "breaks", class: "breaks", time: 60, cost: 100 },
-    { description: "fix my whole bike", class: "whole", time: 180, cost: 200 }
-  ];
-
-  // show the issues as select
-  let selects = "";
-  issues.forEach(issue => {
-    selects += `<option>${issue["description"]}</option>hello`;
-  });
-  $("#selectIssue").append(selects);
-
-
-  $('plus').
-   
+  getBikeTypes();
 });
+
+/**
+ * Fetches data for bike type.
+ */
+function getBikeTypes() {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow"
+  };
+
+  fetch("http://localhost:9000/api/getypebike.php", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      console.log(result);
+      let selects = "";
+      result.forEach(type => {
+        selects += `<option value="${type.tbikeID}">${type.description}</option>`;
+      });
+      $("#selectIssue").append(selects);
+    })
+    .catch(error => console.log("error", error));
+}
